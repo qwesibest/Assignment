@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Table with Tins, Chairs & Canopy</title>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene background="color: #FAFAFA" shadow="type:pcfsoft">
+    <!-- grass ground -->
+    <a-plane position="0 0 -3" rotation="-90 0 0" width="20" height="20" color="#3BB143" receive-shadow="true"></a-plane>
+
+    <!-- table top -->
+    <a-box position="0 0.9 -3" width="2.2" depth="1.2" height="0.12" color="#8B5A2B" cast-shadow="true" receive-shadow="true"></a-box>
+
+    <!-- table legs -->
+    <a-box position="-1.05 0.45 -3.6" width="0.08" depth="0.08" height="0.9" color="#5C3A21" cast-shadow="true"></a-box>
+    <a-box position="1.05 0.45 -3.6" width="0.08" depth="0.08" height="0.9" color="#5C3A21" cast-shadow="true"></a-box>
+    <a-box position="-1.05 0.45 -2.4" width="0.08" depth="0.08" height="0.9" color="#5C3A21" cast-shadow="true"></a-box>
+    <a-box position="1.05 0.45 -2.4" width="0.08" depth="0.08" height="0.9" color="#5C3A21" cast-shadow="true"></a-box>
+
+    <!-- tins on the table -->
+    <a-cylinder position="-0.35 1.15 -3" radius="0.14" height="0.38" color="#2E7D32"
+                material="metalness:0.6; roughness:0.3" cast-shadow="true" receive-shadow="true"></a-cylinder>
+    <a-cylinder position="-0.35 1.33 -3" radius="0.155" height="0.05" color="#1B5E20"
+                material="metalness:0.6; roughness:0.25" cast-shadow="true"></a-cylinder>
+    <a-text value="MILO" color="#FFF" align="center" position="-0.35 1.08 -2.98" width="0.4"></a-text>
+
+    <a-cylinder position="0.35 1.15 -3" radius="0.14" height="0.28" color="#E0E0E0"
+                material="metalness:0.9; roughness:0.2" cast-shadow="true" receive-shadow="true"></a-cylinder>
+    <a-cylinder position="0.35 1.33 -3" radius="0.155" height="0.05" color="#BDBDBD"
+                material="metalness:0.9; roughness:0.2" cast-shadow="true"></a-cylinder>
+    <a-text value="MILK" color="#000" align="center" position="0.35 1.08 -2.98" width="0.4"></a-text>
+
+    <!-- chairs facing the table -->
+    <a-entity id="chair-a" position="0 0 -1.95" rotation="0 0 0">
+      <a-box position="0 0.55 0" width="0.6" depth="0.5" height="0.1" color="#7A4B2A" cast-shadow="true"></a-box>
+      <a-box position="0 1.05 0.22" width="0.6" depth="0.08" height="0.9" color="#7A4B2A" cast-shadow="true"></a-box>
+      <a-box position="-0.27 0.3 0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+      <a-box position="0.27 0.3 0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+      <a-box position="-0.27 0.3 -0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+      <a-box position="0.27 0.3 -0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+    </a-entity>
+
+    <a-entity id="chair-b" position="0 0 -4.05" rotation="0 180 0">
+      <a-box position="0 0.55 0" width="0.6" depth="0.5" height="0.1" color="#7A4B2A" cast-shadow="true"></a-box>
+      <a-box position="0 1.05 0.22" width="0.6" depth="0.08" height="0.9" color="#7A4B2A" cast-shadow="true"></a-box>
+      <a-box position="-0.27 0.3 0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+      <a-box position="0.27 0.3 0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+      <a-box position="-0.27 0.3 -0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+      <a-box position="0.27 0.3 -0.2" width="0.06" depth="0.06" height="0.6" color="#5C3A21" cast-shadow="true"></a-box>
+    </a-entity>
+
+    <!-- canopy over the table (bigger) -->
+    <a-entity id="canopy">
+      <!-- roof (larger overhang and slightly higher) -->
+      <a-box position="0 3.5 -3" width="3.6" depth="2.4" height="0.1" color="yellow"
+             material="opacity:0.95" cast-shadow="true" receive-shadow="true"></a-box>
+      <!-- support poles (moved outward and taller to match bigger roof) -->
+      <a-cylinder position="-1.8 1.1 -4.2" radius="0.035" height="5" color="#grey" segments-radial="6" cast-shadow="true"></a-cylinder>
+      <a-cylinder position="1.8 1.1 -4.2" radius="0.035" height="5" color="#grey" segments-radial="6" cast-shadow="true"></a-cylinder>
+      <a-cylinder position="-1.8 1.1 -1.8" radius="0.035" height="5" color="#grey" segments-radial="6" cast-shadow="true"></a-cylinder>
+      <a-cylinder position="1.8 1.1 -1.8" radius="0.035" height="5" color="#grey" segments-radial="6" cast-shadow="true"></a-cylinder>
+    </a-entity>
+
+    <!-- lighting & camera -->
+    <a-entity light="type:ambient; color:#BBB"></a-entity>
+    <a-entity light="type:directional; color:#FFF; intensity:0.9" position="-1 3 1" rotation="-45 25 0"
+              castShadow="true" shadow-map-width="1024" shadow-map-height="1024"></a-entity>
+
+    <a-entity position="0 1.6 1">
+      <a-camera></a-camera>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
